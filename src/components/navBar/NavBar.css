@@ -1,0 +1,44 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 30%;
+}
+
+.navbar-logo__img {
+  height: 150px;
+}
+
+.navbar-menu {
+  width: 30%;
+  margin-top: -32px;
+}
+
+.navbar-menu__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-menu__link {
+  font-size: 24px;
+  color: darkgray;
+}
+
+.navbar-menu__link:hover {
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.navbar-menu__link.active {
+  color: #333;
+}
+
