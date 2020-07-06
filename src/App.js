@@ -7,6 +7,7 @@ import './App.css'
 import NavBar from "./components/navBar/NavBar";
 import GlobalFeed from './pages/globalFeed/index';
 import Article from './pages/article/index';
+import Auth from "./pages/auth/Auth";
 
 export default () => {
   return (
@@ -15,6 +16,8 @@ export default () => {
         <Switch>
           <Route exact path='/' component={GlobalFeed} />
           <Route path='/article' component={Article} />
+          <Route path='/login' component={Auth} />
+          <Route path='/register' component={Auth} />
         </Switch>
     </div>
   );
