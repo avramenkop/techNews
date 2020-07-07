@@ -19,7 +19,7 @@ export default () => {
         <div className="auth-wrapper">
           <h1 className='auth__title'>Login</h1>
           <form className='auth-form' onSubmit={submitHandler}>
-            <div className='field'>
+            <div className='auth-form__field'>
               <input
                 id='email'
                 type='email'
@@ -29,7 +29,7 @@ export default () => {
               />
               <label htmlFor="email"/>
             </div>
-            <div className='field'>
+            <div className='auth-form__field'>
               <input
                 id='password'
                 type='password'
@@ -39,10 +39,10 @@ export default () => {
               />
               <label htmlFor="password"/>
             </div>
-            <button className='auth__log-in' type='submit'>Log in</button>
+            <button className='auth-form__log-in' type='submit'>Log in</button>
             <p>
               Not registered? &nbsp;
-              <Link className='auth__register' to='/register'>Create account</Link>
+              <Link className='auth-form__register-link' to='/register'>Create account</Link>
             </p>
           </form>
         </div>

@@ -17,11 +17,11 @@ fieldset {
   width: 50%;
 }
 
-.field, .field input {
+.auth-form__field, .auth-form__field input {
   width: 100%;
 }
 
-.field input {
+.auth-form__field input {
   border: 2px solid #333333;
   border-radius: 5px;
   padding: 10px 0 10px 15px;
@@ -30,7 +30,7 @@ fieldset {
   font-size: 16px;
 }
 
-.auth__log-in {
+.auth-form__log-in {
   align-self: flex-end;
   padding: 15px 30px;
   border: none;
@@ -40,8 +40,17 @@ fieldset {
   margin: 20px 0;
   color: #fff;
   background: linear-gradient(0deg, rgba(82,122,77,1) 0%, rgba(30,232,11,1) 100%);
+  transform: scale(1.0);
+  transition: ease-in 0.5s;
 }
 
-.auth__register {
+.auth-form__log-in:hover {
+  transform: scale(1.2);
+  transition: ease-in 0.5s;
+}
+
+.auth-form__register-link {
   color: green;
 }
+
+
