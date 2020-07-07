@@ -1,17 +1,45 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from 'react-router-dom';
-
 import './Auth.css'
+
 
 export default () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const submitHandler = (event) => {
     event.preventDefault()
     console.log('data', email, password)
+    setIsSubmitted(true)
   }
+
+  useEffect(() => {
+
+    if(!isSubmitted) {
+      return
+    }
+
+    fetch('https://conduit.productionready.io/api/users/login', {
+      method: 'post',
+      body: {
+        user: {
+          email: 'fafafa@gmail.com',
+          password: '123'
+        }
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setIsSubmitted(false)     //??????
+      })
+      .catch(error => {
+        console.error(error);
+        setIsSubmitted(false)     //??????
+      })
+  })
 
   return (
     <div className='auth'>
@@ -39,7 +67,13 @@ export default () => {
               />
               <label htmlFor="password"/>
             </div>
-            <button className='auth-form__log-in' type='submit'>Log in</button>
+            <button
+              className='auth-form__log-in'
+              type='submit'
+              disabled={isSubmitted}
+            >
+              Log in
+            </button>
             <p>
               Not registered? &nbsp;
               <Link className='auth-form__register-link' to='/register'>Create account</Link>

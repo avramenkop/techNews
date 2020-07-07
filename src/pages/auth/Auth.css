@@ -40,13 +40,11 @@ fieldset {
   margin: 20px 0;
   color: #fff;
   background: linear-gradient(0deg, rgba(82,122,77,1) 0%, rgba(30,232,11,1) 100%);
-  transform: scale(1.0);
-  transition: ease-in 0.5s;
+  outline: none;
 }
 
-.auth-form__log-in:hover {
-  transform: scale(1.2);
-  transition: ease-in 0.5s;
+.auth-form__log-in:disabled {
+  background: darkgray;
 }
 
 .auth-form__register-link {
